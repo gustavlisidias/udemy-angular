@@ -1,0 +1,64 @@
+<div class="container p-3">
+    <form #form="ngForm" (ngSubmit)="submitForm(form)">
+
+        <div class="mb-3">
+            <p class="fs-5 fw-bold text-uppercase">Informações</p>
+            <label for="input-nome">Nome</label>
+            <input type="text" class="form-control" aria-describedby="nome-help" #nome="ngModel" [ngModel]="nome.value"
+                id="input-nome" name="nome" required ngModel>
+            <div id="nome-help" class="form-text text-danger" *ngIf="nome.invalid">*Obrigatório</div>
+        </div>
+
+        <div class="mb-3">
+            <p class="fs-5 fw-bold text-uppercase">Sexo</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sexo" id="radio-masculino" value="masculino" ngModel>
+                <label class="form-check-label" for="radio-masculino">Masculino</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sexo" id="radio-feminino" value="feminino" ngModel>
+                <label class="form-check-label" for="radio-feminino">Feminino</label>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <p class="fs-5 fw-bold text-uppercase">Frameworks</p>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="angular" id="checkbox-angular" ngModel>
+                <label class="form-check-label" for="checkbox-angular">Angular</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="react" id="checkbox-react" ngModel>
+                <label class="form-check-label" for="checkbox-react">React</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="vue" id="checkbox-vue" ngModel>
+                <label class="form-check-label" for="checkbox-vue">Vue</label>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <p class="fs-5 fw-bold text-uppercase">Região</p>
+            <select class="form-select" name="estado" ngModel>
+                <option value="">-- Selecione uma Estado --</option>
+                <option *ngFor="let i of estados" [value]="i.sigla">{{ i.nome }}</option>
+            </select>
+        </div>
+
+        <div class="mt-5">
+            JSON: {{ form .value | json }}
+        </div>
+
+        <div class="mt-5">
+            <button class="btn btn-primary" [disabled]="form.invalid">Salvar</button>
+        </div>
+
+        <!-- <div class="mt-5"> -->
+            <!--{{ form.valid }}  Verifica se todos os elementos do form são válidos -->
+            <!--{{ nome.valid }}  Verifica se o elemento é válido -->
+            <!--{{ nome.invalid }}  Verifica se o elemento é inválido -->
+            <!--{{ nome.dirty }}  Verifica se o elemento já foi alterado/escrito -->
+            <!--{{ nome.touched }} Verifica se o elemento já foi selecionado -->
+        <!-- </div> -->
+    </form>
+</div>

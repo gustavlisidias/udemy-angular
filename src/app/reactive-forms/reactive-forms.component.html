@@ -1,0 +1,35 @@
+<style>
+    input.ng-touched.ng-invalid,
+    input.ng-touched.ng-pending {
+        border-color: #b02a37;
+        box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
+    }
+</style>
+
+<div class="container p-3">
+
+    <form [formGroup]="cadastroForm" (ngSubmit)="submitForm()">
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Primeiro Nome" formControlName="primeiroNome">
+            <small *ngIf="cadastroForm.get('primeiroNome')?.touched && 
+                cadastroForm.get('primeiroNome')?.errors">*Obrigatorio</small>
+        </div>
+
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Ultimo Nome" formControlName="ultimoNome">
+            <small *ngIf="cadastroForm.get('ultimoNome')?.touched && 
+                cadastroForm.get('ultimoNome')?.errors">*Obrigatorio, mínimo 4 caracteres</small>
+        </div>
+
+        <div class="mb-3">
+            <input type="email" class="form-control" placeholder="E-mail" formControlName="email">
+            <small *ngIf="cadastroForm.get('email')?.touched && 
+                cadastroForm.get('email')?.errors">*Obrigatorio, tipo email</small>
+        </div>
+
+        <div class="d-grid gap-2 mb-3">
+            <button class="btn btn-primary" [disabled]="cadastroForm.invalid">Salvar</button>
+        </div>
+    </form>
+
+</div>

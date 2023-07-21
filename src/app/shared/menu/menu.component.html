@@ -1,0 +1,55 @@
+<style>
+    button.navbar-toggler {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    .navbar-toggler-icon {
+        filter: invert(1)
+    }
+</style>
+
+<header>
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" [routerLink]="['/']" [routerLinkActive]="['active']"
+                [routerLinkActiveOptions]="{exact: true}">
+                <img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" height="45">
+            </a>
+
+            <button class="navbar-toggler border-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <div class="navbar-nav">
+
+                    <a class="nav-link text-light" [routerLink]="['/']" [routerLinkActive]="['active']"
+                        [routerLinkActiveOptions]="{exact: true}">Início</a>
+
+                    <a class="nav-link text-light" [routerLink]="['account']" [routerLinkActive]="['active']"
+                        [routerLinkActiveOptions]="{exact: true}" [queryParams]="{account: 'admin', password: '1234'}">Perfil</a>
+
+                    <a class="nav-link text-light" [routerLink]="['sobre']" [routerLinkActive]="['active']"
+                        [routerLinkActiveOptions]="{exact: true}">Sobre</a>
+
+                    <a class="nav-link text-light" [routerLink]="['sobre', '1']" [routerLinkActive]="['active']"
+                        [routerLinkActiveOptions]="{exact: true}">Sobre (Elemento Filho)</a>
+
+                    <a class="nav-link text-light" [routerLink]="['/dashboard']" [routerLinkActive]="['active']"
+                        [routerLinkActiveOptions]="{exact: true}">Dashboard</a>
+
+                    <a class="nav-link text-light" [routerLink]="['/dashboard-guards']" [routerLinkActive]="['active']"
+                        [routerLinkActiveOptions]="{exact: true}">Dashboard Guards</a>
+
+                    <a class="nav-link text-light" [routerLink]="['/leads']" [routerLinkActive]="['active']"
+                        [routerLinkActiveOptions]="{exact: true}">Leads</a>
+
+                    <a class="nav-link text-light" [routerLink]="['/404/']" [routerLinkActive]="['active']"
+                        [routerLinkActiveOptions]="{exact: true}">Erro</a>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</header>

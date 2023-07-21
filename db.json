@@ -1,0 +1,36 @@
+{
+  "list-food": [
+    {
+      "id": 1,
+      "food": "X-Bacon"
+    },
+    {
+      "food": "Arroz Tipo 1",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "food": "Feijão"
+    },
+    {
+      "id": 4,
+      "food": "Frango"
+    },
+    {
+      "food": "Lasanha",
+      "id": 5
+    },
+    {
+      "food": "Batata Frita",
+      "id": 6
+    },
+    {
+      "food": "Salada",
+      "id": 7
+    },
+    {
+      "food": "Strogonoff",
+      "id": 8
+    }
+  ]
+}
